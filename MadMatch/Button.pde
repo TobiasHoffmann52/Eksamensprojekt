@@ -1,4 +1,4 @@
-class Button {
+class Button extends Game{
   float x, y;
   float w, h;
   boolean selected;
@@ -31,15 +31,14 @@ class Button {
       if ( selected == true) {
         selected = false;
         currentColor = defaultColor;
-      } else {      //had been selected == false
+      } else {
         selected = true;
         currentColor = selectedColor;
-      } //end else
-    }  //end outer if
-  } ///end of clicked
+      }
+    } 
+  }
 
-  //sets the button to off state
-  void reset() {
+  void reset() { // Nulstilling af knap
     selected = false;
     currentColor = defaultColor;
   }

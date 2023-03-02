@@ -1,23 +1,21 @@
-Button b;
+Game g;
 
 void setup() {
   background(smokyBlack);
-  size(1000, 600);
+  size(1000, 700);
 
   noStroke();
-  
-  b = new Button(100,100,100,100,darkMossGreen,barnRed,"test"); 
+  g = new Game();
+  g.runGame();
 }
 
-void draw(){
-clear();
-  b.display();
-
+void draw() {
+  clear();
+  g.felt1.display();
+  g.felt2.display();
+  g.felt3.display();
+  g.s.display();
 }
 
-void mousePressed(){
-b.clicked(mouseX,mouseY);
-
-
-
+void mousePressed() {
 }
