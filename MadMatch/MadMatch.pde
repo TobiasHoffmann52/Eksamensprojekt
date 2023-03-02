@@ -11,10 +11,7 @@ void setup() {
 
 void draw() {
   clear();
-  g.felt1.display();
-  g.felt2.display();
-  g.felt3.display();
-  g.s.display();
+  g.display();
 }
 
 void mousePressed() {
