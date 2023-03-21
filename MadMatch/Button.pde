@@ -1,4 +1,4 @@
-class Button extends Game{
+class Button extends Game {
   float x, y;
   float w, h;
   boolean selected;
@@ -35,7 +35,7 @@ class Button extends Game{
         selected = true;
         currentColor = selectedColor;
       }
-    } 
+    }
   }
 
   void reset() { // Nulstilling af knap
