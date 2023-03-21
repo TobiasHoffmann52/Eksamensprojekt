@@ -8,6 +8,6 @@ PImage snick;
 PImage milk;
 
 void loadBilleder() {
-  snick   = loadImage("snickers.png");
+  snick      = loadImage("snickers.png");
   milk       = loadImage("mælk.png");
 }

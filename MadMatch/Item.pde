@@ -15,8 +15,12 @@ class Item {
 
   void displayItem() {
     textAlign(CENTER);
-    text(navn, x, y);
-    image(billede, x, y, w, h);
+    imageMode(CENTER);
+    image(billede, x+w/2, y+h/2, billede.width/4, billede.height/4);
+    fill(255);
+    textSize(36);
+
+    text(navn, x+w/2, y);
 
 
     fill(dimGray);
