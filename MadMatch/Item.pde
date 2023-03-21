@@ -4,29 +4,25 @@ class Item {
   String navn;
   PImage billede;
 
-  Item(float x, float y, float w, float h, String navn, PImage billede) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
+  Item(String navn, PImage billede) {
     this.navn = navn;
     this.billede = billede;
   }
 
-  void displayItem() {
-    textAlign(CENTER);
+  void displayItem(float x, float y, float w, float h) {
     imageMode(CENTER);
-    image(billede, x+w/2, y+h/2, billede.width/4, billede.height/4);
+    image(billede, x, y+h/2, billede.width/3, billede.height/3);
+    
+    textAlign(CENTER);
     fill(255);
-    textSize(36);
-
-    text(navn, x+w/2, y);
-
+    textSize(48);
+    text(navn, x, y+50);
 
     fill(dimGray);
-    rect(x, y+200, w, h);
+    rectMode(CENTER);
+    rect(x, y+450, w-20, h-150); 
     fill(0);
-    textSize(20);
-    text("Placér her", x + w/2, y + h/2+200);
+    textSize(28);
+    text("Placér her", x, y+450);
   }
 }

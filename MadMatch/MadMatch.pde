@@ -1,12 +1,18 @@
 Game g;
 
+void settings() {
+  fullScreen();
+}
+
 void setup() {
   background(smokyBlack);
-  size(1000, 700);
+
 
   noStroke();
   g = new Game();
   g.runGame();
+
+  frameRate(1);
 }
 
 void draw() {

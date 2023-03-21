@@ -7,15 +7,16 @@ class Score extends Game {
     this.highscore = highscore;
   }
 
-  void display() {
+  void displayScore() {
     fill(mustard);
-    rect(0,0,width,60);
-    
+    rect(0, 0, displayWidth, 80);
+
+
     textSize(36);
     fill(255);
     textAlign(LEFT);
-    text("Highscore: " + highscore, 25, 40);
+    text("Highscore: " + highscore, 25, 50);
     textAlign(CENTER);
-    text("Level: " + score, width/2, 40);
+    text("Level: " + score, displayWidth/2, 50);
   }
 }
