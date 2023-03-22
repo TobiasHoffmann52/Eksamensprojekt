@@ -9,7 +9,7 @@ class Score extends Game {
 
   void displayScore() {
     fill(mustard);
-    rect(0, 0, displayWidth, 80);
+    rect(0, 0, 1440, 80);
 
 
     textSize(36);
