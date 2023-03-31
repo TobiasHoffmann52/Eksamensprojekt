@@ -13,6 +13,15 @@ PImage sugarb;
 PImage riceb;
 PImage potatob;
 
+StringList snickersu = new StringList("Blev først solgt i 1930", "Indeholder 303 kalorier i alt", "Vejer typisk 45g");
+StringList milku = new StringList("Indeholder 42 kcal/100g", "Har højt calcium indhold", "Indeholder ca. 87% vand");
+StringList eggu = new StringList("Består af to dele", "Indeholder 155 kcal/100g", "Har højt kolesterol indhold");
+StringList butteru = new StringList("Indeholder ca. 80% fedt", "Koger ved 150 grader", "Bliver hårdere ved lavere temperaturer");
+StringList flouru = new StringList("Har højt kulhydrat indhold", "Indeholder stivelse", "Indeholder ca. 20% protein");
+StringList sugaru = new StringList("Indeholder 387 kcal/100g", "Indeholder ca. 100% kulhydrat", "Smelter ved 186 grader");
+StringList riceu = new StringList("Indeholder ca. 68% vand", "Er en basisfødevare", "Forbindes med asien");
+StringList potatou = new StringList("Indeholder ca. 79% vand", "Har højt kalium indhold", "Indeholder meget vitamin C");
+
 void loadBilleder() {
   snickersb     = loadImage("snickers.png");
   milkb         = loadImage("mælk.png");

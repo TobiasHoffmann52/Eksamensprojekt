@@ -12,7 +12,7 @@ class Item {
   void displayItem(float x, float y, float w, float h) {
     imageMode(CENTER);
     image(billede, x, y+h/2, billede.width/3, billede.height/3);
-    
+
     textAlign(CENTER);
     fill(255);
     textSize(48);
@@ -24,5 +24,6 @@ class Item {
     fill(0);
     textSize(28);
     text("Placér her", x, y+450);
+    rectMode(CORNER);
   }
 }

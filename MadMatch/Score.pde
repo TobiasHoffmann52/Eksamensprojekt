@@ -1,4 +1,4 @@
-class Score extends Game {
+class Score {
   int score;
   int highscore;
 
@@ -9,14 +9,14 @@ class Score extends Game {
 
   void displayScore() {
     fill(mustard);
-    rect(0, 0, 1440, 80);
+    rect(0, 0, displayWidth, 80);
 
 
     textSize(36);
     fill(255);
     textAlign(LEFT);
-    text("Highscore: " + highscore, 25, 50);
+    text("Highscore: " + g.highscore, 25, 50);
     textAlign(CENTER);
-    text("Level: " + score, displayWidth/2, 50);
+    text("Level: " + g.level, displayWidth/2, 50);
   }
 }

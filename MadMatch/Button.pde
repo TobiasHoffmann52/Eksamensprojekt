@@ -1,11 +1,11 @@
-class Button extends Game {
+class Button {
   float x, y;
   float w, h;
   boolean selected;
-  color defaultColor, selectedColor, currentColor;
+  color defaultColor, selectedColor, currentColor, textColor;
   String label;
 
-  Button(float x, float y, float w, float h, color onColor, color offColor, String label) {
+  Button(float x, float y, float w, float h, color onColor, color offColor, String label, color textColor) {
     this.x = x;
     this.y = y;
     this.w = w; 
@@ -15,14 +15,16 @@ class Button extends Game {
     currentColor = defaultColor;
     selected = false;
     this.label = label;
+    this.textColor = textColor;
   }
 
   void display() {
+    rectMode(CORNER);
     fill(currentColor);
     rect( x, y, w, h);
-    fill(0);
+    fill(textColor);
     textAlign(CENTER);
-    textSize(20);
+    textSize(36);
     text(label, x + w/2, y + h/2);
   }
 
