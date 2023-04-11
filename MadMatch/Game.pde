@@ -1,6 +1,7 @@
-class Game { //<>//
+class Game { //<>// //<>//
   Button next;
   Score s;
+  Button reset;
 
   int level = 1;
   int highscore = 0;
@@ -15,6 +16,7 @@ class Game { //<>//
     s = new Score(level, highscore);
 
     next = new Button(displayWidth-150, 25, 120, 50, darkMossGreen, dimGray, "Næste", 255);
+    reset = new Button(displayWidth-300, 25, 120, 50, darkMossGreen, dimGray, "Reset", 255);
 
     loadBilleder();
 
@@ -41,6 +43,10 @@ class Game { //<>//
   }
 
   void updateScore() {
+    if (reset.selected==true) {
+      level = 1;
+      reset.reset();
+    }
 
     if (next.selected==true) {
       level = level + 1;
@@ -54,7 +60,10 @@ class Game { //<>//
       index3 = int(random(items.size()));
 
       udsagn1.getUdsagn(snickersu);
-      
+      udsagn2.getUdsagn(butteru);
+      udsagn3.getUdsagn(riceu);
+
+
       next.reset();
     }
   }
@@ -78,11 +87,12 @@ class Game { //<>//
     Item item3 = items.get(index3);
     item3.displayItem(width-200, 100, 400, 400);
   }
- //<>//
+
 
   void display() {
     s.displayScore();
     next.display();
+    reset.display();
     displayItems();
   }
 }

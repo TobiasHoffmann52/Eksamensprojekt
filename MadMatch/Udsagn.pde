@@ -1,8 +1,8 @@
 class Udsagn extends Game {
-  float x, y; // Position of the object
-  float w, h; // Width and height of the object
-  boolean dragging = false; // Whether the object is being dragged
-  float offsetX, offsetY; // Offset between mouse position and object position
+  float x, y;
+  float w, h;
+  boolean dragging = false;
+  float offsetX, offsetY;
 
   StringList udsagn;
   String statement1;
@@ -24,7 +24,7 @@ class Udsagn extends Game {
   }
 
 
-  // Check if the object is being clicked on
+
   void click(float mx, float my) {
     if (mx > x && mx < x + w && my > y && my < y + h) {
       dragging = true;
@@ -33,7 +33,7 @@ class Udsagn extends Game {
     }
   }
 
-  // Update the position of the object when it's being dragged
+
   void drag(float mx, float my) {
     if (dragging) {
       x = mx + offsetX;
@@ -41,7 +41,6 @@ class Udsagn extends Game {
     }
   }
 
-  // Draw the object
   void display() {
     text(statement1, x, y);
   }
