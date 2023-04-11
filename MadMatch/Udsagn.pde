@@ -1,4 +1,4 @@
-class Udsagn extends Game {
+class Udsagn{
   float x, y;
   float w, h;
   boolean dragging = false;
@@ -18,7 +18,7 @@ class Udsagn extends Game {
 
   void getUdsagn( StringList udsagn) {
     this.udsagn = udsagn;
-    statement1 = udsagn.get(int(random(udsagn.size())));
+    statement1 = udsagn.get(int(random(udsagn.size()))); //<>//
     statement2 = udsagn.get(int(random(udsagn.size())));
     statement3 = udsagn.get(int(random(udsagn.size())));
   }
@@ -42,10 +42,15 @@ class Udsagn extends Game {
   }
 
   void display() {
-    text(statement1, x, y);
+    fill(mustard);
+    rectMode(CENTER);
+    rect(x,y,w,h);
+    fill(255);
+    textSize(18);
+    text(statement1, x, y); //<>//
   }
 }
 
-Udsagn udsagn1 = new Udsagn(200, 600, 150, 50);
-Udsagn udsagn2 = new Udsagn(width/2, 600, 150, 50);
-Udsagn udsagn3 = new Udsagn(width/2-200, 600, 150, 50);
+Udsagn udsagn1 = new Udsagn(200, 800, 300, 40);
+Udsagn udsagn2 = new Udsagn(width/2, 800, 300, 40);
+Udsagn udsagn3 = new Udsagn(width/2-200, 800, 300, 40);

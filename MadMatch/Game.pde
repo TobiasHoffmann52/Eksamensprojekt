@@ -1,4 +1,4 @@
-class Game { //<>// //<>//
+class Game {
   Button next;
   Score s;
   Button reset;
@@ -13,21 +13,24 @@ class Game { //<>// //<>//
   ArrayList<Item> items = new ArrayList<Item>();
 
   void runGame() {
+
     s = new Score(level, highscore);
 
     next = new Button(displayWidth-150, 25, 120, 50, darkMossGreen, dimGray, "Næste", 255);
+    next.selected=true;
+
     reset = new Button(displayWidth-300, 25, 120, 50, darkMossGreen, dimGray, "Reset", 255);
 
     loadBilleder();
 
-    items.add(new Item("Snickers", snickersb));
-    items.add(new Item("Mælk", milkb));
-    items.add(new Item("Æg", eggb));
-    items.add(new Item("Smør", butterb));
-    items.add(new Item("Mel", flourb));
-    items.add(new Item("Sukker", sugarb));
-    items.add(new Item("Ris", riceb));
-    items.add(new Item("Kartofel", potatob));
+    items.add(new Item("Snickers", snickersb, snickersu));
+    items.add(new Item("Mælk", milkb, milku));
+    items.add(new Item("Æg", eggb, eggu));
+    items.add(new Item("Smør", butterb, butteru));
+    items.add(new Item("Mel", flourb, flouru));
+    items.add(new Item("Sukker", sugarb, sugaru));
+    items.add(new Item("Ris", riceb, riceu));
+    items.add(new Item("Kartofel", potatob, potatou));
 
     /* 
      -- Liste over objekter --
@@ -40,12 +43,12 @@ class Game { //<>// //<>//
      [6] Ris
      [7] Kartofel
      */
-  }
+  } //<>//
 
   void updateScore() {
     if (reset.selected==true) {
       level = 1;
-      reset.reset();
+      reset.reset(); //<>//
     }
 
     if (next.selected==true) {
@@ -56,13 +59,12 @@ class Game { //<>// //<>//
       }
 
       index1 = int(random(items.size()));
-      index2 = int(random(items.size()));
+      index2 = int(random(items.size())); //<>//
       index3 = int(random(items.size()));
 
       udsagn1.getUdsagn(snickersu);
       udsagn2.getUdsagn(butteru);
       udsagn3.getUdsagn(riceu);
-
 
       next.reset();
     }

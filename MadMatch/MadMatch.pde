@@ -18,9 +18,9 @@ void setup() {
 void draw() {
   clear();
   g.display();
-  g.updateScore();
+  g.updateScore(); //<>//
 
-  udsagn1.display();
+  udsagn1.display(); //<>//
   udsagn2.display();
   udsagn3.display();
 }

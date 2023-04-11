@@ -3,10 +3,12 @@ class Item {
   float w, h;
   String navn;
   PImage billede;
+  StringList udsagnListe;
 
-  Item(String navn, PImage billede) {
+  Item(String navn, PImage billede, StringList udsagnListe) {
     this.navn = navn;
     this.billede = billede;
+    this.udsagnListe = udsagnListe;
   }
 
   void displayItem(float x, float y, float w, float h) {
