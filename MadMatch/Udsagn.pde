@@ -1,13 +1,11 @@
-class Udsagn{
+class Udsagn { //<>// //<>// //<>//
   float x, y;
   float w, h;
   boolean dragging = false;
   float offsetX, offsetY;
 
   StringList udsagn;
-  String statement1;
-  String statement2;
-  String statement3;
+  String statement;
 
   Udsagn(float x, float y, float w, float h) {
     this.x = x;
@@ -18,9 +16,7 @@ class Udsagn{
 
   void getUdsagn( StringList udsagn) {
     this.udsagn = udsagn;
-    statement1 = udsagn.get(int(random(udsagn.size()))); //<>//
-    statement2 = udsagn.get(int(random(udsagn.size())));
-    statement3 = udsagn.get(int(random(udsagn.size())));
+    statement = udsagn.get(int(random(udsagn.size())));
   }
 
 
@@ -42,15 +38,14 @@ class Udsagn{
   }
 
   void display() {
+
+
     fill(mustard);
-    rectMode(CENTER);
-    rect(x,y,w,h);
+    rectMode(CORNER);
+    w = statement.length()*10;
+    rect(x, y, w, h);
     fill(255);
-    textSize(18);
-    text(statement1, x, y); //<>//
+    textSize(16);
+    text(statement, x+w/2, y+h/2);
   }
 }
-
-Udsagn udsagn1 = new Udsagn(200, 800, 300, 40);
-Udsagn udsagn2 = new Udsagn(width/2, 800, 300, 40);
-Udsagn udsagn3 = new Udsagn(width/2-200, 800, 300, 40);

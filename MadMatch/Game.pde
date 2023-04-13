@@ -3,7 +3,7 @@ class Game {
   Score s;
   Button reset;
 
-  int level = 1;
+  int level = 0;
   int highscore = 0;
 
   int index1;
@@ -61,10 +61,6 @@ class Game {
       index1 = int(random(items.size()));
       index2 = int(random(items.size())); //<>//
       index3 = int(random(items.size()));
-
-      udsagn1.getUdsagn(snickersu);
-      udsagn2.getUdsagn(butteru);
-      udsagn3.getUdsagn(riceu);
 
       next.reset();
     }
