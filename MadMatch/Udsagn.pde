@@ -1,4 +1,4 @@
-class Udsagn { //<>// //<>// //<>//
+class Udsagn { //<>//
   float x, y;
   float w, h;
   boolean dragging = false;
@@ -38,14 +38,17 @@ class Udsagn { //<>// //<>// //<>//
   }
 
   void display() {
-
-
     fill(mustard);
     rectMode(CORNER);
+   
     w = statement.length()*10;
     rect(x, y, w, h);
+      
     fill(255);
     textSize(16);
     text(statement, x+w/2, y+h/2);
+    
+    if(mousePressed && mouseButton == LEFT){click(mouseX, mouseY);}
+    if
   }
 }

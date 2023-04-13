@@ -47,16 +47,6 @@ class Item {
     text("Placér her", x, y+450);
     rectMode(CORNER);
   }
-  
-  void mousePressed() {
-    udsagn.click(mouseX, mouseY);
-  }
-
-  void mouseReleased() {
-    udsagn.dragging = false;
-  }
-
-  void mouseDragged() {
-    udsagn.drag(mouseX, mouseY);
-  }
 }
+
+  
