@@ -65,6 +65,7 @@ class Game { //<>// //<>// //<>//
         index1 = int(random(items.size()));
         index2 = int(random(items.size()));
         index3 = int(random(items.size()));
+        svar = false;
       }
       next.reset();
     }
@@ -79,20 +80,32 @@ class Game { //<>// //<>// //<>//
       index3 = int(random(items.size()));
     }
 
+
+
     Item item1 = items.get(index1);
     item1.displayItem(200, 100, 400, 400);
+    while (item1.udsagn.x == 100) {
+      item1.udsagn.x = 200;
+      item1.udsagn.y = 800;
+    }
 
     Item item2 = items.get(index2);
     item2.displayItem(width/2, 100, 400, 400);
+    while (item2.udsagn.x == 100) {
+      item2.udsagn.x=width/2;
+      item2.udsagn.y = 800;
+    }
 
     Item item3 = items.get(index3);
     item3.displayItem(width-200, 100, 400, 400);
+    while (item3.udsagn.x == 100) {
+      item3.udsagn.x=width-200;
+      item3.udsagn.y = 800;
+    }
 
     boolean svar1 = item1.tjekPlacering();
     boolean svar2 = item2.tjekPlacering();
     boolean svar3 = item3.tjekPlacering();
- 
-    println(svar1 + " " +  svar2 + " " + svar3);
 
     if (svar1 && svar2 && svar3) {
       svar = true;
@@ -105,5 +118,7 @@ class Game { //<>// //<>// //<>//
     next.display();
     reset.display();
     displayItems();
+
+    text(mouseX+ " "+mouseY, 100, 100);
   }
 }

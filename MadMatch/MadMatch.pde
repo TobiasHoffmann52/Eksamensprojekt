@@ -24,5 +24,4 @@ void draw() {
 void mousePressed() {
   g.next.clicked(mouseX, mouseY);
   g.reset.clicked(mouseX, mouseY);
- 
 }

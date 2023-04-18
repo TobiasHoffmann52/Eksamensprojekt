@@ -1,6 +1,7 @@
 class Score {
   int score;
   int highscore;
+  color farve = mustard;
 
   Score(int score, int highscore) {
     this.score = score;
@@ -8,7 +9,7 @@ class Score {
   }
 
   void displayScore() {
-    fill(mustard);
+    fill(farve);
     rect(0, 0, displayWidth, 80);
 
 
@@ -18,5 +19,8 @@ class Score {
     text("Highscore: " + g.highscore, 25, 50);
     textAlign(CENTER);
     text("Level: " + g.level, displayWidth/2, 50);
+    
+    
+    
   }
 }
