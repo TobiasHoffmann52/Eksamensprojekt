@@ -7,27 +7,27 @@ class Item {
   Udsagn udsagn;
 
 
-  Item(String navn, PImage billede, StringList udsagnListe) {
+  Item(String navn, PImage billede, StringList udsagnListe) { //<>//
     this.navn = navn;
     this.billede = billede;
     this.udsagnListe = udsagnListe;
 
-
-    udsagn = new Udsagn(x+100, y+600, 300, 40);
+    udsagn = new Udsagn(x+100, y+600, 300, 40); //<>//
     udsagn.getUdsagn(udsagnListe);
   }
 
-  void displayItem(float x, float y, float w, float h) {
+  void displayItem(float x, float y, float w, float h) { //<>//
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
 
 
-
-    if (g.next.selected==true) {
+    if (g.next.selected && g.svar) {
       udsagn.getUdsagn(udsagnListe);
     }
 
-    if (udsagn.statement==null)println("Nu er den null!", g.next.selected);
-
-
+    //if (udsagn.statement==null)println("Nu er den null!", g.next.selected);
 
     udsagn.display();
 
@@ -46,7 +46,22 @@ class Item {
     textSize(28);
     text("Placér her", x, y+450);
     rectMode(CORNER);
+
+    if (mousePressed) {
+      udsagn.click(mouseX, mouseY);
+    } else {    
+      udsagn.dragging = false;
+    }
+    if (mousePressed && pmouseX != mouseX && pmouseY != mouseY) {
+      udsagn.drag(mouseX, mouseY);
+    }
+  }
+
+  boolean tjekPlacering() {
+    if (udsagn.x > x && udsagn.x < x+w && udsagn.y > y && udsagn.y < y+h) {
+      return true;
+    } else { 
+      return false;
+    }
   }
 }
-
-  

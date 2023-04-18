@@ -6,6 +6,7 @@ class Udsagn { //<>//
 
   StringList udsagn;
   String statement;
+  boolean korrekt = false;
 
   Udsagn(float x, float y, float w, float h) {
     this.x = x;
@@ -36,19 +37,18 @@ class Udsagn { //<>//
       y = my + offsetY;
     }
   }
+  
+
 
   void display() {
     fill(mustard);
     rectMode(CORNER);
-   
+
     w = statement.length()*10;
     rect(x, y, w, h);
-      
+
     fill(255);
     textSize(16);
     text(statement, x+w/2, y+h/2);
-    
-    if(mousePressed && mouseButton == LEFT){click(mouseX, mouseY);}
-    if
   }
 }

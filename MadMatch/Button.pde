@@ -25,7 +25,7 @@ class Button {
     fill(textColor);
     textAlign(CENTER);
     textSize(36);
-    text(label, x + w/2, y + h/2);
+    text(label, x + w/2, y + h/2+10);
   }
 
   void clicked(int mx, int my) { // mouseX og mouseY

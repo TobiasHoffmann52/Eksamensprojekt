@@ -24,16 +24,5 @@ void draw() {
 void mousePressed() {
   g.next.clicked(mouseX, mouseY);
   g.reset.clicked(mouseX, mouseY);
-  //udsagn.click(mouseX, mouseY);
- 
-}
-
-
-void mouseReleased() {
- // udsagn.dragging = false;
-}
-
-void mouseDragged() {
- // udsagn.drag(mouseX, mouseY);
  
 }
