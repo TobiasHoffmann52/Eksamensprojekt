@@ -12,6 +12,10 @@ PImage flourb;
 PImage sugarb;
 PImage riceb;
 PImage potatob;
+PImage orangeb;
+PImage grapeb;
+
+PImage heart;
 
 StringList snickersu = new StringList("Blev først solgt i 1930", "Indeholder 303 kalorier i alt", "Vejer typisk 45g");
 StringList milku = new StringList("Indeholder 42 kcal/100g", "Har højt calcium indhold", "Indeholder ca. 87% vand");
@@ -21,6 +25,10 @@ StringList flouru = new StringList("Har højt kulhydrat indhold", "Indeholder st
 StringList sugaru = new StringList("Indeholder 387 kcal/100g", "Indeholder ca. 100% kulhydrat", "Smelter ved 186 grader");
 StringList riceu = new StringList("Indeholder ca. 68% vand", "Er en basisfødevare", "Forbindes med asien");
 StringList potatou = new StringList("Indeholder ca. 79% vand", "Har højt kalium indhold", "Indeholder meget vitamin C");
+StringList orangeu = new StringList("Er en del af citrus familien", "Gror på træer", "Indeholder 47 kcal/100g");
+StringList grapeu = new StringList("Kan spises uden at blive behandlet", "Bruges til at lave en drikkevare", "Findes i flere farver");
+
+
 
 void loadBilleder() {
   snickersb     = loadImage("snickers.png");
@@ -31,4 +39,9 @@ void loadBilleder() {
   sugarb        = loadImage("sugar.png");
   riceb         = loadImage("rice.png");
   potatob       = loadImage("potato.png");
+  orangeb       = loadImage("orange.png");
+  grapeb        = loadImage("grape.png");
+
+
+  heart         = loadImage("heart.png");
 }

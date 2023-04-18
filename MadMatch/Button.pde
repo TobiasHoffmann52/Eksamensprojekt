@@ -29,19 +29,21 @@ class Button {
   }
 
   void clicked(int mx, int my) { // mouseX og mouseY
-    if ( mx > x && mx < x+w && my >y && my < y+h) {   //Knappen er blevet trykket på
+    if ( mx > x && mx < x+w && my >y && my < y+h) {   // Tjekker om knappen er blevet trykket på
       if ( selected == true) {
         selected = false;
         currentColor = defaultColor;
       } else {
         selected = true;
         currentColor = selectedColor;
+         
       }
     }
   }
 
   void reset() { // Nulstilling af knap
     selected = false;
+   
     currentColor = defaultColor;
   }
 }

@@ -1,4 +1,4 @@
-class Udsagn { //<>//
+class Udsagn { //<>// //<>//
   float x, y;
   float w, h;
   boolean dragging = false;
@@ -37,16 +37,17 @@ class Udsagn { //<>//
       y = my + offsetY;
     }
   }
-  
+
 
 
   void display() {
     fill(mustard);
     rectMode(CORNER);
-
+    stroke(2);
     w = statement.length()*10;
     rect(x, y, w, h);
-
+    noStroke();
+    
     fill(255);
     textSize(16);
     text(statement, x+w/2, y+h/2);

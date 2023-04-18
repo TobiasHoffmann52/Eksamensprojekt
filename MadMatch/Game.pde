@@ -1,17 +1,17 @@
-class Game { //<>// //<>// //<>//
+class Game { //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>//
   Button next;
   Button reset;
   Score s;
 
+  int level = 1;
+  int highscore = 1;
+  int antalLiv = 5;
 
-  int level = 0;
-  int highscore = 0;
-
-  int index1;
-  int index2;
-  int index3;
+  int index1, index2, index3;
 
   boolean svar = false;
+  boolean svar1, svar2, svar3;
+  boolean doOnce = true;
 
   ArrayList<Item> items = new ArrayList<Item>();
 
@@ -20,8 +20,6 @@ class Game { //<>// //<>// //<>//
     s = new Score(level, highscore);
 
     next = new Button(displayWidth-150, 15, 120, 50, darkMossGreen, dimGray, "Næste", 255);
-    next.selected=true;
-
     reset = new Button(displayWidth-300, 15, 120, 50, darkMossGreen, dimGray, "Reset", 255);
 
     loadBilleder();
@@ -34,6 +32,8 @@ class Game { //<>// //<>// //<>//
     items.add(new Item("Sukker", sugarb, sugaru));
     items.add(new Item("Ris", riceb, riceu));
     items.add(new Item("Kartofel", potatob, potatou));
+    items.add(new Item("Appelsin", orangeb, orangeu));
+    items.add(new Item("Vindrue", grapeb, grapeu));
 
     /* 
      -- Liste over objekter --
@@ -45,31 +45,48 @@ class Game { //<>// //<>// //<>//
      [5] Sukker
      [6] Ris
      [7] Kartofel
+     [8] Appelsin
      */
   }
-
-  void updateScore() {
-    if (reset.selected==true) {
-      level = 1;
-      reset.reset();
-    }
-
-    if (next.selected==true) {
-      if (highscore < level) {
-        highscore = level;
-      }
-
-      if (svar) {
+  int temp;
+  void tjekSvar() {
+    if (next.selected) {
+      if (svar1 && svar2 && svar3) {
+        svar = true;
+        s.farve = darkMossGreen;
+        temp = frameCount;
         level = level + 1;
 
         index1 = int(random(items.size()));
         index2 = int(random(items.size()));
         index3 = int(random(items.size()));
-        svar = false;
+      } else {
+        s.farve = barnRed;
+        temp = frameCount;
+        antalLiv = antalLiv - 1;
+        lyd.play();
+
+        if (antalLiv == 0) {
+          reset.selected = true;
+        }
       }
       next.reset();
     }
+
+    if (reset.selected) {
+      level = 1;
+      antalLiv = 5;
+
+      index1 = int(random(items.size()));
+      index2 = int(random(items.size()));
+      index3 = int(random(items.size()));
+
+      s.farve = mustard;
+      reset.reset();
+    }
   }
+
+
 
   void displayItems() {
     while (index2 == index1 || index2 == index3) {
@@ -80,45 +97,44 @@ class Game { //<>// //<>// //<>//
       index3 = int(random(items.size()));
     }
 
-
-
     Item item1 = items.get(index1);
     item1.displayItem(200, 100, 400, 400);
-    while (item1.udsagn.x == 100) {
-      item1.udsagn.x = 200;
-      item1.udsagn.y = 800;
-    }
+
+
 
     Item item2 = items.get(index2);
     item2.displayItem(width/2, 100, 400, 400);
-    while (item2.udsagn.x == 100) {
-      item2.udsagn.x=width/2;
-      item2.udsagn.y = 800;
-    }
+
 
     Item item3 = items.get(index3);
     item3.displayItem(width-200, 100, 400, 400);
-    while (item3.udsagn.x == 100) {
-      item3.udsagn.x=width-200;
-      item3.udsagn.y = 800;
-    }
 
-    boolean svar1 = item1.tjekPlacering();
-    boolean svar2 = item2.tjekPlacering();
-    boolean svar3 = item3.tjekPlacering();
+    item1.udsagn.display();
+    item2.udsagn.display();
+    item3.udsagn.display();
 
-    if (svar1 && svar2 && svar3) {
-      svar = true;
+    svar1 = item1.tjekPlacering();
+    svar2 = item2.tjekPlacering();
+    svar3 = item3.tjekPlacering();
+
+    if (doOnce) {
+      item1.udsagn.x = random(displayWidth-300);
+      item1.udsagn.y = random(displayHeight-350, displayHeight-50);
+
+      item2.udsagn.x = random(displayWidth-300);
+      item2.udsagn.y = random(displayHeight-350, displayHeight-50);
+
+      item3.udsagn.x = random(displayWidth-300);
+      item3.udsagn.y = random(displayHeight-350, displayHeight-50);
+
+      doOnce = false;
     }
   }
-
 
   void display() {
     s.displayScore();
     next.display();
     reset.display();
     displayItems();
-
-    text(mouseX+ " "+mouseY, 100, 100);
   }
 }

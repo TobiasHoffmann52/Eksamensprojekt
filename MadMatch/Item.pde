@@ -1,4 +1,4 @@
-class Item { //<>// //<>// //<>//
+class Item { //<>//
   float x, y;
   float w, h;
   String navn;
@@ -25,7 +25,6 @@ class Item { //<>// //<>// //<>//
     this.w = w;
     this.h = h;
 
-
     if (g.next.selected && g.svar) {
       udsagn.getUdsagn(udsagnListe);
     }
@@ -46,7 +45,7 @@ class Item { //<>// //<>// //<>//
     text("Placér her", x, y+450);
     rectMode(CORNER);
 
-    udsagn.display();
+    //<>//
 
     if (mousePressed) {
       udsagn.click(mouseX, mouseY);
@@ -55,12 +54,13 @@ class Item { //<>// //<>// //<>//
     }
     if (mousePressed && pmouseX != mouseX && pmouseY != mouseY) {
       udsagn.drag(mouseX, mouseY);
+      
     }
   }
 
   boolean tjekPlacering() {
     boolean r = udsagn.x > x-190 && udsagn.x < x-210+w && udsagn.y > y+330 && udsagn.y < y+330+h-150;
-    println(udsagn.x, udsagn.y, ".....", x-190, x-210+w, y+330, y+330+h-150, udsagn.statement, ".....", r);
+   //  println(udsagn.x, udsagn.y, ".....", x-190, x-210+w, y+330, y+330+h-150, udsagn.statement, ".....", r); // Viser placeringer ifm. debugging
     return r;
   }
 }
