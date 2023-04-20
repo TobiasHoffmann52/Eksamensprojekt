@@ -23,7 +23,7 @@ class Button {
     fill(currentColor);
     rect( x, y, w, h);
     fill(textColor);
-    textAlign(CENTER,CENTER);
+    textAlign(CENTER, CENTER);
     textSize(36);
     text(label, x + w/2, y + h/2-5);
   }
@@ -36,14 +36,13 @@ class Button {
       } else {
         selected = true;
         currentColor = selectedColor;
-         
       }
     }
   }
 
   void reset() { // Nulstilling af knap
     selected = false;
-   
+
     currentColor = defaultColor;
   }
 }

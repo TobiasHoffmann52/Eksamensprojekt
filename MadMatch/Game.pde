@@ -1,4 +1,4 @@
-class Game {  //<>// //<>// //<>//
+class Game { //<>//
   Button next;
   Button reset;
   Button start;
@@ -124,8 +124,6 @@ class Game {  //<>// //<>// //<>//
     }
   }
 
-
-
   void displayItems() {
     // Sikre at der ikke kan være flere af den samme fødevare
     while (index2 == index1 || index2 == index3) {
@@ -173,6 +171,7 @@ class Game {  //<>// //<>// //<>//
       doOnce = false;
     }
   }
+  
   int texty = 0;
   void displayStart() {
     start.y = displayHeight/2+200+texty;
@@ -203,8 +202,6 @@ class Game {  //<>// //<>// //<>//
 
   // Kører alle display funktioner
   void display() {
-
-
     s.displayScore();
     next.display();
     reset.display();

@@ -1,9 +1,9 @@
-Game g; //<>// //<>// //<>//
+Game g;  //<>//
 import processing.sound.*;
 SoundFile lyd;
 
 void settings() {
-  fullScreen(3);
+  fullScreen();
 }
 
 void setup() {

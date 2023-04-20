@@ -1,11 +1,10 @@
-class Udsagn { //<>// //<>// //<>//
+class Udsagn { //<>//
   float x, y;
   float w, h;
   boolean dragging = false;
 
   StringList udsagn;
   String statement;
-  boolean korrekt = false;
 
   Udsagn(float x, float y, float w, float h) {
     this.x = x;
@@ -20,14 +19,12 @@ class Udsagn { //<>// //<>// //<>//
     statement = udsagn.get(int(random(udsagn.size())));
   }
 
-
   // Køres når der klikkes på musen
   void click(float mx, float my) {
     if (mx > x && mx < x + w && my > y && my < y + h) {
       dragging = true;
     }
   }
-
 
   // Køres når musen trækkes hen over skærmen
   void drag(float mx, float my) {
@@ -36,7 +33,6 @@ class Udsagn { //<>// //<>// //<>//
       y = my-(h/2);
     }
   }
-
 
   // Tegner udsagn
   void display() {

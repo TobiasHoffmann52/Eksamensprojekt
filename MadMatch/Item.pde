@@ -1,4 +1,4 @@
-class Item { //<>// //<>// //<>// //<>// //<>//
+class Item { //<>//
   float x, y;
   float w, h;
   String navn;
