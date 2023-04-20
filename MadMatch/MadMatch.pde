@@ -1,9 +1,9 @@
-Game g; //<>//
+Game g; //<>// //<>// //<>//
 import processing.sound.*;
 SoundFile lyd;
 
 void settings() {
-  fullScreen();
+  fullScreen(3);
 }
 
 void setup() {
@@ -11,9 +11,7 @@ void setup() {
   noStroke();
   g = new Game();
   g.runGame();
-
   frameRate(60);
-  lyd = new SoundFile(this, "data/hurt.mp3");
 }
 
 void draw() {
@@ -24,5 +22,6 @@ void draw() {
 void mousePressed() {
   g.next.clicked(mouseX, mouseY);
   g.reset.clicked(mouseX, mouseY);
+  g.start.clicked(mouseX, mouseY);
   g.tjekSvar();
 }

@@ -1,6 +1,7 @@
-class Game {  //<>//
+class Game {  //<>// //<>// //<>//
   Button next;
   Button reset;
+  Button start;
   Score s;
 
   int level = 1;
@@ -19,11 +20,12 @@ class Game {  //<>//
     s = new Score(level, highscore);
 
     // Næste og reset knapperne laves
-    next = new Button(displayWidth-150, 15, 120, 50, darkMossGreen, dimGray, "Næste", 255);
-    reset = new Button(displayWidth-300, 15, 120, 50, darkMossGreen, dimGray, "Reset", 255);
+    next = new Button(displayWidth-150, 15, 140, 60, darkMossGreen, dimGray, "Næste", 255);
+    reset = new Button(displayWidth-300, 15, 140, 60, darkMossGreen, dimGray, "Reset", 255);
+    start = new Button(displayWidth/2-100, displayHeight/2+200+texty, 200, 50, smokyBlack, smokyBlack, "Start", mustard);
 
     // Alle billeder indlæses
-    loadBilleder();
+    loadData();
 
     // Fødevarene bliver lagt ind i ArrayList
     items.add(new Item("Snickers", snickersb, snickersu));
@@ -171,12 +173,42 @@ class Game {  //<>//
       doOnce = false;
     }
   }
+  int texty = 0;
+  void displayStart() {
+    start.y = displayHeight/2+200+texty;
+
+    rectMode(CENTER);
+    fill(mustard);
+    rect(displayWidth/2, displayHeight/2+texty, displayWidth, displayHeight);
+
+    fill(smokyBlack);
+
+    rect(displayWidth/2, displayHeight/2+texty, frameCount*10, 200);
+
+    textSize(96);
+    textFont(font1);
+    textAlign(CENTER, CENTER);
+    fill(mustard);
+    text("MadMATCH!", displayWidth/2, displayHeight/2+texty);
+
+    if (frameCount >= 190) {
+      start.display();
+    }
+    if (start.selected && texty >= -1*displayHeight) {
+      texty = texty-5;
+    }
+
+    textFont(font2);
+  }
 
   // Kører alle display funktioner
   void display() {
+
+
     s.displayScore();
     next.display();
     reset.display();
     displayItems();
+    displayStart();
   }
 }

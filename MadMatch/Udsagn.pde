@@ -1,8 +1,7 @@
-class Udsagn { //<>//
+class Udsagn { //<>// //<>// //<>//
   float x, y;
   float w, h;
   boolean dragging = false;
-  float offsetX, offsetY;
 
   StringList udsagn;
   String statement;
@@ -26,8 +25,6 @@ class Udsagn { //<>//
   void click(float mx, float my) {
     if (mx > x && mx < x + w && my > y && my < y + h) {
       dragging = true;
-      offsetX = x - mx;
-      offsetY = y - my;
     }
   }
 
@@ -35,8 +32,8 @@ class Udsagn { //<>//
   // Køres når musen trækkes hen over skærmen
   void drag(float mx, float my) {
     if (dragging) {
-      x = mx + offsetX;
-      y = my + offsetY;
+      x = mx-(w/2);
+      y = my-(h/2);
     }
   }
 
@@ -46,12 +43,13 @@ class Udsagn { //<>//
     fill(mustard);
     rectMode(CORNER);
     stroke(2);
-    w = statement.length()*10;
+    w = statement.length()*11;
     rect(x, y, w, h);
     noStroke();
 
-    fill(255);
+    fill(smokyBlack);
     textSize(16);
+    textAlign(CENTER, CENTER);
     text(statement, x+w/2, y+h/2);
   }
 }

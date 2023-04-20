@@ -57,8 +57,11 @@ StringList chipsu        = new StringList("Blev først solgt i 1853", "Indeholde
 StringList candyu        = new StringList("Blev først solgt i 1908", "Hovedingrediensen er gelatine", "Stammer fra England");
 StringList teau          = new StringList("Har et koffeinindhold på ca. 11mg/100ml", "Stammer fra asien", "Kan indtages både koldt og varmt");
 
+PFont font1;
+PFont font2;
+
 // Funktion til indlæselse af billeder
-void loadBilleder() {
+void loadData() {
   snickersb     = loadImage("snickers.png");
   milkb         = loadImage("mælk.png");
   eggb          = loadImage("egg.png");
@@ -84,4 +87,8 @@ void loadBilleder() {
   teab          = loadImage("tea.png");
 
   heart         = loadImage("heart.png");
+  
+  lyd = new SoundFile(this, "data/hurt.mp3");
+  font1 = loadFont("DejaVuSans-BoldOblique-96.vlw");
+  font2 = loadFont("DejaVuSans-Bold-96.vlw");
 }
