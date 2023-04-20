@@ -1,14 +1,10 @@
-class Item { //<>//
+class Item { //<>// //<>// //<>//
   float x, y;
   float w, h;
   String navn;
   PImage billede;
   StringList udsagnListe;
   Udsagn udsagn;
-
-
-
-
 
   Item(String navn, PImage billede, StringList udsagnListe) {
     this.navn = navn;
@@ -23,20 +19,19 @@ class Item { //<>//
     this.x = x;
     this.y = y;
     this.w = w;
-    this.h = h;
+    this.h = h;    
 
-    if (g.next.selected && g.svar) {
-      udsagn.getUdsagn(udsagnListe);
-    }
-
+    // Tegner billedet
     imageMode(CENTER);
     image(billede, x, y+h/2, billede.width/3, billede.height/3);
 
+    // Skriver navnet på fødevaren
     textAlign(CENTER);
     fill(255);
     textSize(48);
     text(navn, x, y+50);
 
+    // Tegner feltet
     fill(dimGray);
     rectMode(CENTER);
     rect(x, y+450, w-20, h-150); 
@@ -45,8 +40,8 @@ class Item { //<>//
     text("Placér her", x, y+450);
     rectMode(CORNER);
 
-    //<>//
 
+    // Drag and Drop funktion
     if (mousePressed) {
       udsagn.click(mouseX, mouseY);
     } else {    
@@ -54,13 +49,13 @@ class Item { //<>//
     }
     if (mousePressed && pmouseX != mouseX && pmouseY != mouseY) {
       udsagn.drag(mouseX, mouseY);
-      
     }
   }
 
+  // Tjekker om udsagnet er inde i feltet
   boolean tjekPlacering() {
     boolean r = udsagn.x > x-190 && udsagn.x < x-210+w && udsagn.y > y+330 && udsagn.y < y+330+h-150;
-   //  println(udsagn.x, udsagn.y, ".....", x-190, x-210+w, y+330, y+330+h-150, udsagn.statement, ".....", r); // Viser placeringer ifm. debugging
+    //  println(udsagn.x, udsagn.y, ".....", x-190, x-210+w, y+330, y+330+h-150, udsagn.statement, ".....", r); // Viser placeringer ifm. debugging
     return r;
   }
 }
