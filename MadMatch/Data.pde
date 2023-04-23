@@ -89,7 +89,8 @@ void loadData() {
 
   heart         = loadImage("heart.png");
 
-  lyd = new SoundFile(this, "data/hurt.mp3");
+  correct = new SoundFile(this, "correct.mp3");
+  wrong = new SoundFile(this, "hurt.mp3");
   font1 = loadFont("DejaVuSans-BoldOblique-96.vlw");
   font2 = loadFont("DejaVuSans-Bold-96.vlw");
 }

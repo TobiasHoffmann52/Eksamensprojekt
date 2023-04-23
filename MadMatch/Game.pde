@@ -86,6 +86,7 @@ class Game { //<>//
     if (next.selected) {
       if (svar1 && svar2 && svar3) {
         s.farve = darkMossGreen; // Skifter bjælkens farve
+        correct.play();
         temp = frameCount;
         level = level + 1; // Øger level
 
@@ -99,7 +100,7 @@ class Game { //<>//
         s.farve = barnRed; // Skifter bjælkens farve
         temp = frameCount;
         antalLiv = antalLiv - 1; // Fjerner et liv
-        lyd.play();
+        wrong.play();
 
         if (antalLiv == 0) {
           reset.selected = true; // Game over
