@@ -24,7 +24,7 @@ class Game { //<>//
     reset = new Button(displayWidth-300, 15, 140, 60, darkMossGreen, dimGray, "Reset", 255);
     start = new Button(displayWidth/2-100, displayHeight/2+200+texty, 200, 50, smokyBlack, smokyBlack, "Start", mustard);
 
-    // Alle billeder indlæses
+    // Alle data indlæses
     loadData();
 
     // Fødevarene bliver lagt ind i ArrayList

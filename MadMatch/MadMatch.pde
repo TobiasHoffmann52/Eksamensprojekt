@@ -1,6 +1,7 @@
-Game g;  //<>//
-import processing.sound.*;
+import processing.sound.*; //<>//
 SoundFile correct, wrong;
+
+Game g; 
 
 void settings() {
   fullScreen();
